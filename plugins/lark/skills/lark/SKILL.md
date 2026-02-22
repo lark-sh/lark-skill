@@ -17,8 +17,8 @@ Lark is a real-time serverless database. Data is stored as a JSON tree, accessed
 
 The docs for Lark and the Lark JS SDK are located at https://docs.lark.sh.
 
-An LLM summary of the docs is located at https://docs.larksh.com/llms.txt
-A full LLM dump of the docs is located at https://docs.larksh.com/llms-full.txt
+An LLM-friendly summary of the docs is located at https://docs.larksh.com/llms.txt
+A full LLM-friendly dump of the docs is located at https://docs.larksh.com/llms-full.txt
 
 If you are starting a new project in Lark and want to work with the SDK, start by reading the docs.
 
