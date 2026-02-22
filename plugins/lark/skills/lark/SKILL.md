@@ -13,6 +13,15 @@ Lark is a real-time serverless database. Data is stored as a JSON tree, accessed
 - **Path** — location in the JSON tree (e.g. `/`, `/users/alice`)
 - **Security rules** — JSON5 rules controlling read/write access per path
 
+## Docs
+
+The docs for Lark and the Lark JS SDK are located at https://docs.lark.sh.
+
+An LLM summary of the docs is located at https://docs.larksh.com/llms.txt
+A full LLM dump of the docs is located at https://docs.larksh.com/llms-full.txt
+
+If you are starting a new project in Lark and want to work with the SDK, start by reading the docs.
+
 ## CLI (`@lark-sh/cli`)
 
 Install: `npm install -g @lark-sh/cli`
@@ -203,6 +212,5 @@ lark --project "$PROJECT_ID" data set test-db / '{"ready": true}' --confirm --js
 ## Docs & links
 
 - Docs: https://docs.larksh.com (agent-friendly)
-- MCP server: https://docs.larksh.com/mcp (provides the SearchLark tool)
 - Website: https://lark.sh
 - Dashboard: https://dashboard.lark.sh
