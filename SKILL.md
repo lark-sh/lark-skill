@@ -5,7 +5,7 @@ description: Use when working with Lark.sh — a real-time serverless database p
 
 # Lark.sh
 
-Lark is a real-time serverless database. Data is stored as a JSON tree, accessed via REST or WebSocket, with Firebase-style security rules. Each project gets a unique hostname (`{project}.larkdb.net`) for data operations.
+Lark is a real-time serverless database. Data is stored as a JSON tree, accessed via REST or WebSocket, with security rules. It is drop-in compatible with Firebase Realtime Database, so you can apply your knowledge of working with Firebase to Lark as well for things like security rules, data patterns, etc. Each project gets a unique hostname (`{project}.larkdb.net`) for data operations.
 
 **Key concepts:**
 - **Project** — top-level container with a unique slug ID, secret key, and settings
@@ -18,6 +18,8 @@ Lark is a real-time serverless database. Data is stored as a JSON tree, accessed
 Install: `npm install -g @lark-sh/cli`
 
 ### Getting started
+
+If the user hasn't yet created an account on Lark, they should do so on https://dashboard.lark.sh before proceeding with the CLI tool. After account creation, everything else can be done via the Lark CLI.
 
 ```bash
 lark login                        # Authenticate via browser (Google OAuth)
@@ -157,31 +159,6 @@ Direct HTTP access to database data at `https://{project}.larkdb.net`.
 **Authentication:** Pass an admin token via `?auth={token}` query parameter. Tokens are JWTs signed with the project's admin secret (HS256), requested via `POST /projects/{id}/admin-token`.
 
 **SSE streaming:** `GET` with `Accept: text/event-stream` header opens a real-time stream of changes.
-
-## Admin API (`db.lark.sh`)
-
-Management API for projects, databases, and metrics. Authenticated via `lark_session` cookie.
-
-**Base URL:** `https://db.lark.sh`
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/me` | GET | Current user info |
-| `/projects` | GET | List projects |
-| `/projects` | POST | Create project (`{ name }`) |
-| `/projects/:id` | GET | Project details |
-| `/projects/:id` | PATCH | Update project fields |
-| `/projects/:id` | DELETE | Delete project (`{ confirm: id }`) |
-| `/projects/:id/regenerate-secret` | POST | New secret key |
-| `/projects/:id/admin-token` | POST | Sign admin JWT |
-| `/projects/:id/databases` | GET | List databases (`?search=&limit=&offset=`) |
-| `/projects/:id/databases` | POST | Create database (`{ id }`) |
-| `/projects/:id/databases/:dbId` | DELETE | Delete database |
-| `/projects/:id/dashboard` | GET | Metrics + timeseries |
-| `/projects/:id/events` | GET | Paginated events |
-| `/projects/:id/billing` | GET | Billing info |
-
-**Error format:** Always `{ "error": "message" }` with appropriate HTTP status.
 
 ## Common patterns
 
