@@ -1,0 +1,23 @@
+{
+  "name": "lark-tools",
+  "owner": {
+    "name": "Lark.sh"
+  },
+  "metadata": {
+    "description": "Official Lark.sh plugins for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "lark",
+      "source": "./plugins/lark",
+      "description": "Lark.sh CLI reference — real-time database management, data operations, security rules, and more",
+      "version": "1.0.0",
+      "author": {
+        "name": "Lark.sh"
+      },
+      "homepage": "https://docs.larksh.com",
+      "license": "Apache-2.0",
+      "keywords": ["lark", "database", "realtime", "cli"]
+    }
+  ]
+}
